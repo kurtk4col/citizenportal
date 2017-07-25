@@ -12,10 +12,25 @@ an id is input but it is not working as expected, check the casing, it must matc
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta name="mobile-web-app-capable" content="yes">
 		<!-- All scripts are necessary for the functioning of the app, except 'Captcha.js', which is specific to the included Captcha. Leave scripts in the order they are put in -->
-		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/jsapi_en-us.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/QueryTask.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/RelationshipQuery.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/StatisticDefinition.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/svg.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/Task.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/FeatureSet.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/BasemapToggle.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/_WidgetBase.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/a11yclick.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/_TemplatedMixin.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/Destroyable.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/cache.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/_AttachMixin.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/touch.js"></script><script type="text/javascript" src="./Request Submission_files/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/jsapi_en-us.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/QueryTask.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/RelationshipQuery.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/StatisticDefinition.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/svg.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/Task.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/FeatureSet.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/BasemapToggle.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/_WidgetBase.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/a11yclick.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/_TemplatedMixin.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/Destroyable.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/cache.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/_AttachMixin.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/touch.js"></script>
+		<script type="text/javascript" src="./Request Submission_files/jquery-1.11.1.min.js"></script>
 		<script src="./Request Submission_files/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="./Request Submission_files/knockout-3.1.0.js"></script>
-        <script type="text/javascript" src="./Request Submission_files/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./Request Submission_files/bootstrap.min.js"></script>
 		<script type="text/javascript" src="./Request Submission_files/knockout.validation.min.js"></script>
 		<script type="text/javascript" src="./Request Submission_files/bootstrap-dialog.min.js"></script>
 		<script src="./Request Submission_files/saved_resource"></script> <!-- Map js -->
@@ -26,7 +41,7 @@ an id is input but it is not working as expected, check the casing, it must matc
 		<script type="text/javascript" src="./Request Submission_files/LucityCitizenRequest.js"></script>
 		<!-- All links are necessary for the looks of the app, except 'Captcha.css', which is specific to the included Captcha. Leave css in the order they are put in. If modifications are to be made with
 		a separate css file, add it to the bottom -->
-        <link rel="stylesheet" href="./Request Submission_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./Request Submission_files/bootstrap.min.css">
 		<link rel="stylesheet" href="./Request Submission_files/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="./Request Submission_files/LucityCitizenRequest.css">
 		<link rel="stylesheet" href="./Request Submission_files/bootstrap-dialog.css">
@@ -46,7 +61,7 @@ an id is input but it is not working as expected, check the casing, it must matc
 		<link href="https://demo.lucity.net/LucityCustomCitizen/images/apple-startup-image-ipad-landscape-retina.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
 		<link href="https://demo.lucity.net/LucityCustomCitizen/images/apple-startup-image.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
 	</head>
-	<body>    
+	<body>
 	<!-- bodyWrapper is used to scale the entire app in the LucityCitizenRequest.css file -->
 	<div id="bodyWrapper">
 	<!-- The following all caps "URL" divs are used to add linking functionality to the site -->
@@ -84,8 +99,8 @@ an id is input but it is not working as expected, check the casing, it must matc
 			  <br>
 			  <!-- row divs are important for the layout of the site on larger screens. Group together form-group divs inside of these rows to keep them in the same row -->
 			  <div class="row">
-			    <!-- form-group divs are where you will do your modifying of the site. Make sure these divs have the 'form-group' class. The 'col-md-3' class specifies the size of the 
-				div on a larger screen. By default, on a smaller screen each field will occupy its own row, and will take up the width of the screen. 'col-md-#' is standard grid Bootstrap. 
+			    <!-- form-group divs are where you will do your modifying of the site. Make sure these divs have the 'form-group' class. The 'col-md-3' class specifies the size of the
+				div on a larger screen. By default, on a smaller screen each field will occupy its own row, and will take up the width of the screen. 'col-md-#' is standard grid Bootstrap.
 				To make your inputs take up the width of the screen, the #s in each row must add to 12. To offset a row from the left, add a 'col-md-offset-#' to the class -->
 				<div class="col-md-3 form-group has-warning">
 					<!-- Labels are important for ADA compliance, as well as making it explicit what the particular input is for. MUST contain a 'for' field corresponding to the correct id -->
@@ -138,7 +153,7 @@ an id is input but it is not working as expected, check the casing, it must matc
 					<label for="RequestorHomePhone" class="control-label">Home Phone #</label>
 					<input type="text" id="RequestorHomePhone" placeholder="Home Phone #" class="form-control remember" data-bind="value: RequestorHomePhone">
 				</div>
-				<div class="col-md-3 form-group">	
+				<div class="col-md-3 form-group">
 					<label for="RequestorWorkPhone" class="control-label">Work Phone #</label>
 					<input type="text" id="RequestorWorkPhone" placeholder="Work Phone #" class="form-control remember" data-bind="value: RequestorWorkPhone">
 				</div>
@@ -196,7 +211,7 @@ an id is input but it is not working as expected, check the casing, it must matc
 						<input type="checkbox" id="UseCoords"><label for="UseCoords" class="control-label"><strong>Use Map Location</strong></label>
 					</label>
 					</div>
-					<div id="mapDiv" class="map-hidden" style="display: block;"> 
+					<div id="mapDiv" class="map-hidden" style="display: block;">
 					<br>
 						<div id="MapWrapper">
 							<div id="map" class="map" data-basemap="streets" data-zoom="15" data-scale="18055.954822" data-loaded=""><div id="map_root" class="container" style="width: 700px; height: 500px; direction: ltr;"><div id="map_container" class="container" style="position: absolute; cursor: default;"><div id="map_layers" class="layersDiv"><div id="map_layer0" style="position: absolute; width: 700px; height: 500px; overflow: visible; transform: translate(0px, 0px); display: block;"><div style="position: absolute; width: 700px; height: 500px; overflow: visible; transition: -webkit-transform 500ms ease;"><img id="map_layer0_tile_15_0_0" class="layerTile" src="./Request Submission_files/6813" style="width: 256px; height: 256px; visibility: visible; transform: translate(-66px, -249px);"><img id="map_layer0_tile_15_1_0" class="layerTile" src="./Request Submission_files/6813(1)" style="width: 256px; height: 256px; visibility: visible; transform: translate(-66px, 7px);"><img id="map_layer0_tile_15_2_0" class="layerTile" src="./Request Submission_files/6813(2)" style="width: 256px; height: 256px; visibility: visible; transform: translate(-66px, 263px);"><img id="map_layer0_tile_15_0_1" class="layerTile" src="./Request Submission_files/6814" style="width: 256px; height: 256px; visibility: visible; transform: translate(190px, -249px);"><img id="map_layer0_tile_15_1_1" class="layerTile" src="./Request Submission_files/6814(1)" style="width: 256px; height: 256px; visibility: visible; transform: translate(190px, 7px);"><img id="map_layer0_tile_15_2_1" class="layerTile" src="./Request Submission_files/6814(2)" style="width: 256px; height: 256px; visibility: visible; transform: translate(190px, 263px);"><img id="map_layer0_tile_15_0_2" class="layerTile" src="./Request Submission_files/6815" style="width: 256px; height: 256px; visibility: visible; transform: translate(446px, -249px);"><img id="map_layer0_tile_15_1_2" class="layerTile" src="./Request Submission_files/6815(1)" style="width: 256px; height: 256px; visibility: visible; transform: translate(446px, 7px);"><img id="map_layer0_tile_15_2_2" class="layerTile" src="./Request Submission_files/6815(2)" style="width: 256px; height: 256px; visibility: visible; transform: translate(446px, 263px);"></div></div><svg overflow="hidden" width="700" height="500" id="map_gc" style="overflow: visible; position: absolute;"><defs></defs><g id="map_graphics_layer" transform="matrix(1.00000000,0.00000000,0.00000000,1.00000000,0.00000000,0.00000000)" style="display: block;"><g></g><path fill="rgb(0, 0, 0)" fill-opacity="1" stroke="rgb(92, 156, 255)" stroke-opacity="1" stroke-width="4" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" path="M 344,244 356,256 M 344,256 356,244" d="M 344 244 356 256M 344 256 356 244" transform="matrix(1.00000000,0.00000000,0.00000000,1.00000000,0.00000000,0.00000000)" fill-rule="evenodd" stroke-dasharray="none" dojoGfxStrokeStyle="solid"></path></g></svg></div></div><div class="esriControlsBR"></div><div class="esriPopup" style="visibility: hidden; z-index: 40;"><div class="esriPopupWrapper" style="position: absolute;"><div class="sizer"><div class="titlePane" style="user-select: none;"><div class="spinner hidden" title="Searching..."></div><div class="title"></div><div class="titleButton prev hidden" title="Previous feature"></div><div class="titleButton next hidden" title="Next feature"></div><div class="titleButton maximize" title="Maximize"></div><div class="titleButton close" title="Close"></div></div></div><div class="sizer content"><div class="contentPane"></div></div><div class="sizer"><div class="actionsPane"><div class="actionList hidden"><a title="Zoom" to="" class="action zoomTo" href="javascript:void(0);"><span>Zoom to</span></a></div></div></div><div class="pointer hidden"></div></div><div class="outerPointer hidden"></div></div></div></div>
@@ -258,7 +273,7 @@ an id is input but it is not working as expected, check the casing, it must matc
 			</div>
 				<!-- If a Captcha is used, Captcha_Div is REQUIRED to surround it in order for the site to function properly. A simple Captcha is included. IF THE CAPTCHA IS CHANGED: LucityCitizenRequest.js MUST
 				BE EDITED IN ORDER FOR THE SITE TO WORK PROPERLY. Line 4 of LucityCitizenRequest.js must be modified as specific to the Captcha that is chosen -->
-				<div id="Captcha_Div"> 
+				<div id="Captcha_Div">
 					<label for="CaptchaInput" class="control-label">Enter this Code:  </label>
 					<div id="Captcha">F1g1U</div>
 					<input type="text" name="CaptchaInput" id="CaptchaInput" size="15" autocorrect="off" autocapitalize="off">
@@ -270,12 +285,12 @@ an id is input but it is not working as expected, check the casing, it must matc
 		  </center>
 		  <!-- By default, Lucity uses Bootstrap alert to act as the footer for the site. Feel free to modify this as wanted. 'separator' is by Lucity, it enlarges and centers the text -->
 		  <div class="alert">
-			<h3><a target="_blank" href="https://www.lucity.com/">© www.lucity.com</a></h3>
+			<h3><a target="_blank" href="https://www.lucity.com/">ï¿½ www.lucity.com</a></h3>
 		  </div>
 		  </div>
 		</fieldset>
 		</form>
-<!-- The loadingmask div is important for users attempting to use the site with a slow connection so they know the site is still responding. The noscript makes it so the page will not load at all for users who 
+<!-- The loadingmask div is important for users attempting to use the site with a slow connection so they know the site is still responding. The noscript makes it so the page will not load at all for users who
 do not have JavaScript enabled on their browser. The site WILL NOT work without JavaScript-->
 
 </div>
