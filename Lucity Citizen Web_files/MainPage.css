@@ -1,0 +1,86 @@
+/* Written & Commented by Sean Stout for Lucity, Inc. (c) 2014. Some css provided by 3rd party authors & are copyright to their respective owners */
+@font-face {
+    font-family: GeosansLight;
+    src: url(fonts/geosanslight.ttf);
+}
+
+#loadingmask { /* Used for the loading mask image. Change the background as seen fit. width should match body width so that it appears truly centered */
+    width:85%;
+    height:100%;
+    position:fixed;
+    top:0;
+    background:#FFF url(../images/loading.gif) center no-repeat;
+	margin: auto;
+}
+
+#JSWarn { /* The warning that the user does not have JavaScript enabled. top and transform percentages must have the same absolute value to work as intended */
+	position: relative;
+  top: 60%;
+  transform: translateY(-60%);
+}
+
+.separator { /* Centers text is separators */
+	text-align: center;
+}
+
+*  { /* Standardizes font sizes*/
+	font-size: 1em;
+}
+
+body { /* Scales entire app */
+	width: 85%;
+	margin: auto;
+}
+
+#RESTAPI {
+	display: none;
+}
+
+h1 {
+	font-family: GeosansLight, sans-serif;
+	text-align: center;
+	color: #99CC33;
+   -webkit-text-fill-color: #99CC33; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: #99CC33;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+h3 {
+	font-family: GeosansLight, sans-serif;
+	text-align: center;
+	-webkit-text-stroke-width: 1px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.one {
+    border: 1px solid black;
+	height: 25em;
+	width: 25em;
+	max-width: 100%;
+	margin: 2%;
+	display: inline-block;
+}
+
+.two {
+    border: 1px solid black;
+	height: 25em;
+	width: 25em;
+	max-width: 100%;
+	margin: 2%;
+	display: inline-block;
+}
+
+.x.axis path,
+.x.axis line {
+  display: none;
+}
+
+.y.axis path,
+.y.axis line  {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}

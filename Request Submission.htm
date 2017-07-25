@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://demo.lucity.net/LucityCustomCitizen/LucityCitizenRequest.html -->
+<html lang="en" class="dj_webkit dj_chrome dj_contentbox"><!-- Written & Commented by Sean Stout for Lucity, Inc. (c) 2014. Some scripts provided by 3rd party authors & are copyright to their respective owners--><!-- Welcome to the LucityCitizenRequest html file! The comments throughout should help you learn how to use and modify this file to fit your desire. As a top level note, it must be said that all ids are VERY SPECIFIC
+and they are ALL CASE SENSITIVE. DO NOT MODIFY the ids of anything that does not need to be changed. The casing of each id is not consistent throughout the document, THIS IS BY DESIGN. Additionally, all classes are
+case specific, classes must be cased as provided or they WILL NOT WORK. When changing the ids of the inputs and changing their labels, be sure to use the casing provided by Lucity so that it matches the RESTAPI. If
+an id is input but it is not working as expected, check the casing, it must match EXACTLY --><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<!-- title can be changed as seen fit -->
+		<title>Request Submission</title>
+		<!-- meta names used for iPhone and Android standalone app stylings. Leave these alone -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="mobile-web-app-capable" content="yes">
+		<!-- All scripts are necessary for the functioning of the app, except 'Captcha.js', which is specific to the included Captcha. Leave scripts in the order they are put in -->
+		<script type="text/javascript" charset="utf-8" src="./Request Submission_files/jsapi_en-us.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/QueryTask.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/RelationshipQuery.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/StatisticDefinition.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/svg.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/Task.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/FeatureSet.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/BasemapToggle.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/_WidgetBase.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/a11yclick.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/_TemplatedMixin.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/Destroyable.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/cache.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/_AttachMixin.js"></script><script type="text/javascript" charset="utf-8" src="./Request Submission_files/touch.js"></script><script type="text/javascript" src="./Request Submission_files/jquery-1.11.1.min.js"></script>
+		<script src="./Request Submission_files/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="./Request Submission_files/knockout-3.1.0.js"></script>
+        <script type="text/javascript" src="./Request Submission_files/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./Request Submission_files/knockout.validation.min.js"></script>
+		<script type="text/javascript" src="./Request Submission_files/bootstrap-dialog.min.js"></script>
+		<script src="./Request Submission_files/saved_resource"></script> <!-- Map js -->
+		<script type="text/javascript" src="./Request Submission_files/CitizenFunctions.js"></script>
+		<script type="text/javascript" src="./Request Submission_files/CitizenCaptcha.js"></script>
+		<script type="text/javascript" src="./Request Submission_files/CitizenFileUploading.js"></script>
+		<script type="text/javascript" src="./Request Submission_files/CitizenMapping.js"></script>
+		<script type="text/javascript" src="./Request Submission_files/LucityCitizenRequest.js"></script>
+		<!-- All links are necessary for the looks of the app, except 'Captcha.css', which is specific to the included Captcha. Leave css in the order they are put in. If modifications are to be made with
+		a separate css file, add it to the bottom -->
+        <link rel="stylesheet" href="./Request Submission_files/bootstrap.min.css">
+		<link rel="stylesheet" href="./Request Submission_files/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="./Request Submission_files/LucityCitizenRequest.css">
+		<link rel="stylesheet" href="./Request Submission_files/bootstrap-dialog.css">
+		<link rel="stylesheet" href="./Request Submission_files/Captcha.css">
+		<link rel="stylesheet" href="./Request Submission_files/esri.css"> <!-- THIS WILL MAYBE BE USED FOR THE MAP! -->
+		<!-- Links following this point are for iPhone and Android standalone app stylings. Additionally, 'icon' is the icon for the page in an ordinary browser. The 'href' can be changed to point to custom startup images.
+		The resolutions for the 'rel="apple-touch-startup-image"' MUST be the EXACT same or they will not work. These are the startup images when using the site as a standalone app on different apple devices. At this time
+		there is no way to have a startup image for android -->
+		<link rel="icon" sizes="196x196" href="https://demo.lucity.net/LucityCustomCitizen/images/touch-icon.png">
+		<link rel="shortcut icon" href="https://demo.lucity.net/LucityCustomCitizen/images/favicon.ico?v=2">
+		<link rel="apple-touch-icon" href="https://demo.lucity.net/LucityCustomCitizen/images/apple-touch-icon.png">
+		<link href="https://demo.lucity.net/LucityCustomCitizen/images/apple-startup-image-retina.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+		<link href="https://demo.lucity.net/LucityCustomCitizen/images/apple-startup-image-iphone-5.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+		<link href="https://demo.lucity.net/LucityCustomCitizen/images/apple-startup-image-ipad-portrait.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+		<link href="https://demo.lucity.net/LucityCustomCitizen/images/apple-startup-image-ipad-landscape.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+		<link href="https://demo.lucity.net/LucityCustomCitizen/images/apple-startup-image-ipad-portrait-retina.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+		<link href="https://demo.lucity.net/LucityCustomCitizen/images/apple-startup-image-ipad-landscape-retina.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+		<link href="https://demo.lucity.net/LucityCustomCitizen/images/apple-startup-image.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+	</head>
+	<body>    
+	<!-- bodyWrapper is used to scale the entire app in the LucityCitizenRequest.css file -->
+	<div id="bodyWrapper">
+	<!-- The following all caps "URL" divs are used to add linking functionality to the site -->
+	<!-- You must change the following to your own URL for the Lucity Citizen Portal installation -->
+	<div id="RESTAPI">https://demo.lucity.net/LucityCitizenPortalRESTAPI/Work</div>
+	<div id="MAINURL">LucityCitizenRequest.html</div>
+	<div id="TRACKURL">RequestLookup.html</div>
+	<!-- FixedCategory is used to set the fixed category of the site if wanted. Use the CategoryCode, not CategoryType. By default turned off now, you can delete it if you don't want it. Fixed Category can also be
+	done server side if that is preferred -->
+<!--<div id="FixedCategory">01000</div> -->
+	<!-- FixedProblem is used to set the fixed problem of the site if wanted. Use the ProblemCode, not ProblemType. By default turned off now, you can delete it if you don't want it. Fixed Problem can also be done
+	server side if that is preferred -->
+<!--<div id="FixedProblem">CSINFOADM</div> -->
+	<!-- ProblemCodeList is used if the standard "?311" problems are not wanted to populate the problem list. If so, provide them here in standard JSON format. By default turned off now, you can delete it if
+	you don't want it. IMPORTANT: The format MUST look like below with double quotes ("). Unlike the rest of the HTML where it is irrelevant, it is important to have double quotes in all the right places or
+	this div will NOT function properly. If this is not working correctly, double check for proper quotation use.-->
+<!--<div id="ProblemCodeList">[{"CodeValue":"BSCON","TypeValue":"Blue Stake Inquiry - Contractor"},{"CodeValue":"BSRES","TypeValue":"Blue Stake Inquiry - Residential"}]</div> -->
+	  <!-- By default, Lucity uses Bootstrap alert to act as the header for the site. Feel free to modify this as wanted. -->
+	  <div class="alert">
+		<h1>Please enter information about yourself</h1>
+	  </div>
+	  <!-- Holds the form. Autocomplete is set to 'off' to prevent data-binding errors. DO NOT turn it on -->
+	  <form autocomplete="off" id="Request_Form">
+	  <fieldset>
+	  <legend style="display: none;">Requestor and Request Information</legend> <!-- Necessary for ADA compliance? -->
+		  <!-- wrapper div prevents the form from touching the edges of the screen in the LucityCitizenRequest.css file. Changing the width percentage may cause an unwanted horizontal scroll bar to appear -->
+		  <div class="wrapper">
+			  <br>
+			  <!-- checkPadding divs with class checkbox must enclose checkboxes to allow for nice standard Lucity spacing. Strange double labeling is for spacing. Feel free to remove this or modify the LucityCitizenRequest.css file as seen fit -->
+			  <div class="checkbox">
+				<label class="control-label">
+					<input type="checkbox" id="RememberMe"><label for="RememberMe" class="control-label"><strong>Remember me</strong></label>
+				</label>
+			  </div>
+			  <br>
+			  <!-- row divs are important for the layout of the site on larger screens. Group together form-group divs inside of these rows to keep them in the same row -->
+			  <div class="row">
+			    <!-- form-group divs are where you will do your modifying of the site. Make sure these divs have the 'form-group' class. The 'col-md-3' class specifies the size of the 
+				div on a larger screen. By default, on a smaller screen each field will occupy its own row, and will take up the width of the screen. 'col-md-#' is standard grid Bootstrap. 
+				To make your inputs take up the width of the screen, the #s in each row must add to 12. To offset a row from the left, add a 'col-md-offset-#' to the class -->
+				<div class="col-md-3 form-group has-warning">
+					<!-- Labels are important for ADA compliance, as well as making it explicit what the particular input is for. MUST contain a 'for' field corresponding to the correct id -->
+					<label for="RequestorName1" class="control-label">First Name</label>
+					<!-- The input itself. Change the id to whatever field you want to be in this location. MUST use proper id name including caps sensitivity for the app to work properly
+					the 'type' will usually be 'text', though it can be 'email' or others as well. Standard HTML. Add 'class="required"' to make the field required. The default styling for
+					required fields is 'has-warning' FOR THE PARENT DIV. This is handled in the LucityCitizenRequest.js file, if you want to change the styling for the required fields, modify
+					the 'has-warning' class in the css. The placeholder specifies what will be 'ghosted into' the input -->
+					<input type="text" class="required form-control remember" id="RequestorName1" placeholder="First Name" data-bind="value: RequestorName1"><span class="validationMessage" style="display: none;"></span>
+				</div>
+				<div class="col-md-3 form-group has-warning">
+					<label for="RequestorName2" class="control-label">Last Name</label>
+					<input type="text" class="required form-control remember" id="RequestorName2" placeholder="Last Name" data-bind="value: RequestorName2"><span class="validationMessage" style="display: none;"></span>
+				</div>
+				<div class="col-md-6 form-group">
+					<label for="Business" class="control-label">Business</label>
+					<input type="text" id="Business" placeholder="Business" class="form-control remember" data-bind="value: Business">
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-2 form-group">
+					<label for="RequestorBuildingNumber" class="control-label">Bldg #</label>
+					<input type="text" id="RequestorBuildingNumber" placeholder="Building Number" class="form-control remember" data-bind="value: RequestorBuildingNumber">
+				</div>
+				<div class="col-md-8 form-group">
+					<!-- The RequestorStreet and RequestorStreet2 ids are specially handled. They will not require a valid input (a street in the RESTAPI), however, as the user types, after 3
+					characters have been input the site will provide suggestions for possible street candidates (taken from the RESTAPI). This is handled in the LucityCitizenRequest.js file -->
+					<label for="RequestorStreet" class="control-label">Street</label>
+					<label for="_RequestorStreet" style="display: none;" class="control-label">Hidden Combobox Label</label><select type="text" id="_RequestorStreet" placeholder="Street" style="display: none;"></select><span class="custom-combobox ui-widget"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input title="" id="RequestorStreet" placeholder="Street" class="custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left ui-autocomplete-input form-control remember" autocomplete="off" data-original-title="" data-bind="value: RequestorStreet, valueUpdate:&#39;afterkeydown&#39;"><a tabindex="-1" title="" data-original-title="Show All Items" class="custom-combobox-toggle ui-corner-right RequestorStreetDown"></a></span>
+				</div>
+				<div class="col-md-2 form-group">
+					<label for="RequestorApartment" class="control-label">Apt/Suite</label>
+					<input type="text" id="RequestorApartment" placeholder="Apt/Suite" class="form-control remember" data-bind="value: RequestorApartment">
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-2 form-group">
+					<label for="RequestorCity" class="control-label">City</label>
+					<input type="text" id="RequestorCity" placeholder="City" class="form-control remember" data-bind="value: RequestorCity">
+				</div>
+				<div class="col-md-2 form-group">
+					<label for="RequestorState" class="control-label">State</label>
+					<input type="text" id="RequestorState" placeholder="State" class="form-control remember" data-bind="value: RequestorState">
+				</div>
+				<div class="col-md-2 form-group">
+					<label for="RequestorZipCode" class="control-label">Zip</label>
+					<input type="text" id="RequestorZipCode" placeholder="Zip" class="form-control remember" data-bind="value: RequestorZipCode">
+				</div>
+				<div class="col-md-3 form-group">
+					<label for="RequestorHomePhone" class="control-label">Home Phone #</label>
+					<input type="text" id="RequestorHomePhone" placeholder="Home Phone #" class="form-control remember" data-bind="value: RequestorHomePhone">
+				</div>
+				<div class="col-md-3 form-group">	
+					<label for="RequestorWorkPhone" class="control-label">Work Phone #</label>
+					<input type="text" id="RequestorWorkPhone" placeholder="Work Phone #" class="form-control remember" data-bind="value: RequestorWorkPhone">
+				</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-3 form-group has-warning">
+					<!-- RequestorEmail will automatically be checked for syntactical correctness -->
+					<label for="RequestorEmail" class="control-label">Email</label>
+					<input type="email" class="required preventpaste form-control remember" id="RequestorEmail" placeholder="Email" data-bind="value: RequestorEmail"><span class="validationMessage" style="display: none;"></span>
+				</div>
+				<div class="col-md-3 form-group has-warning">
+					<!-- ConfirmRequestorEmail will automatically check to make sure it matches RequestorEmail. Syntactical correctness is also enforced -->
+					<label for="ConfirmRequestorEmail" class="control-label">Confirm Email</label>
+					<input type="email" class="required form-control" id="ConfirmRequestorEmail" placeholder="Confirm Email" data-bind="value: ConfirmRequestorEmail"><span class="validationMessage" style="display: none;"></span>
+				</div>
+			  </div>
+			<div class="row">
+				<div class="col-md-3 form-group">
+					<!-- The PriorityCode id is one of many that are specially handled. They will automatically become a combobox where the user may either click an arrow to provide a list
+					of all possible values (taken from the RESTAPI), or they may type in a value on their own and they will be provided with suggestions based on their typing. These specially
+					handled fields REQUIRE a valid input, the site will not let them move on unless a valid input is used, or the field is left blank. It is very important that for these fields
+					valid inputs are provided by the RESTAPI. Though these ids are special, their setup in the HTML is no different from any other input. Their special attributes are handled
+					in the LucityCitizenRequest.js file -->
+					<label for="PriorityCode" class="control-label">Priority Code</label>
+					<label for="_PriorityCode" style="display: none;" class="control-label">Hidden Combobox Label</label><select type="text" id="_PriorityCode" placeholder="Priority Code" style="display: none;"></select><span class="custom-combobox ui-widget"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><div class="dropdown-wrapper"><input title="" id="PriorityCode" placeholder="Priority Code" class="custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left drop-down ui-autocomplete-input form-control" autocomplete="off" data-original-title="" data-bind="value: PriorityCode"><div class="dropdown-caret-wrapper PriorityCodeCaret"><span class="caret"></span></div></div><a tabindex="-1" title="" data-original-title="Show All Items" class="custom-combobox-toggle ui-corner-right PriorityCodeDown"></a></span>
+				</div>
+			</div>
+			  <div class="row">
+			  	<div class="col-md-12 form-group">
+					<label for="CauseCode" class="control-label">Cause Code</label>
+					<label for="_CauseCode" style="display: none;" class="control-label">Hidden Combobox Label</label><select type="text" id="_CauseCode" placeholder="Cause Code" style="display: none;"></select><span class="custom-combobox ui-widget"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><div class="dropdown-wrapper"><input title="" id="CauseCode" placeholder="Cause Code" class="custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left drop-down ui-autocomplete-input form-control" autocomplete="off" data-original-title="" data-bind="value: CauseCode"><div class="dropdown-caret-wrapper CauseCodeCaret"><span class="caret"></span></div></div><a tabindex="-1" title="" data-original-title="Show All Items" class="custom-combobox-toggle ui-corner-right CauseCodeDown"></a></span>
+				</div>
+			  </div>
+		  </div>
+		  <br>
+		  <!-- By default, Lucity uses Bootstrap alert to act as the mid-point for the site. Feel free to modify this as wanted. 'separator' is by Lucity, it enlarges and centers the text -->
+		  <div class="alert">
+			<h1>Tell us about your request</h1>
+		  </div>
+		  <div class="wrapper">
+			<div class="row">
+				<div class="col-md-3 form-group">
+					<!-- ProblemCode acts much like the special combobox ids before, however only specific ProblemCodes (311) will come through as per request -->
+					<label for="ProblemCode" class="control-label">Problem</label>
+					<label for="_ProblemCode" style="display: none;" class="control-label">Hidden Combobox Label</label><select type="text" id="_ProblemCode" placeholder="Problem" style="display: none;"></select><span class="custom-combobox ui-widget"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><div class="dropdown-wrapper"><input title="" id="ProblemCode" placeholder="Problem" class="custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left ui-autocomplete-input form-control" autocomplete="off" data-original-title="" data-bind="value: ProblemCode, valueUpdate: &#39;afterkeydown&#39;"><div class="dropdown-caret-wrapper ProblemCodeCaret"><span class="caret"></span></div></div><a tabindex="-1" title="" data-original-title="Show All Items" class="custom-combobox-toggle ui-corner-right ProblemCodeDown"></a></span>
+				</div>
+			</div>
+			<br>
+			<!-- mapFunctionality is REQUIRED to surround the map in order for the site to function properly. This div itself will make no marks on the site. If map support is not wanted, DO NOT REMOVE the dive
+			or its contents. Instead, place: 'style='display:none;"' after 'id="mapDiv"' and the map will disappear -->
+			  <div id="mapFunctionality">
+				  <button type="button" id="OpenMap" class="btn btn-default" data-bind="click: openMap">Open Map</button>
+					<div id="UseCoordsDiv" class="checkbox">
+					<label class="control-label">&nbsp;&nbsp;
+						<input type="checkbox" id="UseCoords"><label for="UseCoords" class="control-label"><strong>Use Map Location</strong></label>
+					</label>
+					</div>
+					<div id="mapDiv" class="map-hidden" style="display: block;"> 
+					<br>
+						<div id="MapWrapper">
+							<div id="map" class="map" data-basemap="streets" data-zoom="15" data-scale="18055.954822" data-loaded=""><div id="map_root" class="container" style="width: 700px; height: 500px; direction: ltr;"><div id="map_container" class="container" style="position: absolute; cursor: default;"><div id="map_layers" class="layersDiv"><div id="map_layer0" style="position: absolute; width: 700px; height: 500px; overflow: visible; transform: translate(0px, 0px); display: block;"><div style="position: absolute; width: 700px; height: 500px; overflow: visible; transition: -webkit-transform 500ms ease;"><img id="map_layer0_tile_15_0_0" class="layerTile" src="./Request Submission_files/6813" style="width: 256px; height: 256px; visibility: visible; transform: translate(-66px, -249px);"><img id="map_layer0_tile_15_1_0" class="layerTile" src="./Request Submission_files/6813(1)" style="width: 256px; height: 256px; visibility: visible; transform: translate(-66px, 7px);"><img id="map_layer0_tile_15_2_0" class="layerTile" src="./Request Submission_files/6813(2)" style="width: 256px; height: 256px; visibility: visible; transform: translate(-66px, 263px);"><img id="map_layer0_tile_15_0_1" class="layerTile" src="./Request Submission_files/6814" style="width: 256px; height: 256px; visibility: visible; transform: translate(190px, -249px);"><img id="map_layer0_tile_15_1_1" class="layerTile" src="./Request Submission_files/6814(1)" style="width: 256px; height: 256px; visibility: visible; transform: translate(190px, 7px);"><img id="map_layer0_tile_15_2_1" class="layerTile" src="./Request Submission_files/6814(2)" style="width: 256px; height: 256px; visibility: visible; transform: translate(190px, 263px);"><img id="map_layer0_tile_15_0_2" class="layerTile" src="./Request Submission_files/6815" style="width: 256px; height: 256px; visibility: visible; transform: translate(446px, -249px);"><img id="map_layer0_tile_15_1_2" class="layerTile" src="./Request Submission_files/6815(1)" style="width: 256px; height: 256px; visibility: visible; transform: translate(446px, 7px);"><img id="map_layer0_tile_15_2_2" class="layerTile" src="./Request Submission_files/6815(2)" style="width: 256px; height: 256px; visibility: visible; transform: translate(446px, 263px);"></div></div><svg overflow="hidden" width="700" height="500" id="map_gc" style="overflow: visible; position: absolute;"><defs></defs><g id="map_graphics_layer" transform="matrix(1.00000000,0.00000000,0.00000000,1.00000000,0.00000000,0.00000000)" style="display: block;"><g></g><path fill="rgb(0, 0, 0)" fill-opacity="1" stroke="rgb(92, 156, 255)" stroke-opacity="1" stroke-width="4" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" path="M 344,244 356,256 M 344,256 356,244" d="M 344 244 356 256M 344 256 356 244" transform="matrix(1.00000000,0.00000000,0.00000000,1.00000000,0.00000000,0.00000000)" fill-rule="evenodd" stroke-dasharray="none" dojoGfxStrokeStyle="solid"></path></g></svg></div></div><div class="esriControlsBR"></div><div class="esriPopup" style="visibility: hidden; z-index: 40;"><div class="esriPopupWrapper" style="position: absolute;"><div class="sizer"><div class="titlePane" style="user-select: none;"><div class="spinner hidden" title="Searching..."></div><div class="title"></div><div class="titleButton prev hidden" title="Previous feature"></div><div class="titleButton next hidden" title="Next feature"></div><div class="titleButton maximize" title="Maximize"></div><div class="titleButton close" title="Close"></div></div></div><div class="sizer content"><div class="contentPane"></div></div><div class="sizer"><div class="actionsPane"><div class="actionList hidden"><a title="Zoom" to="" class="action zoomTo" href="javascript:void(0);"><span>Zoom to</span></a></div></div></div><div class="pointer hidden"></div></div><div class="outerPointer hidden"></div></div></div></div>
+							<div id="Slider" class="ui-slider ui-slider-vertical ui-widget ui-widget-content ui-corner-all" aria-disabled="false"><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="height: 65.2174%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="https://demo.lucity.net/LucityCustomCitizen/LucityCitizenRequest.html#" style="bottom: 65.2174%;"></a></div>
+							<div class="BasemapToggle" role="presentation" id="BasemapToggle" widgetid="BasemapToggle" style="display: block;">
+    <div class="basemapContainer">
+        <div data-dojo-attach-point="_toggleNode" title="Toggle basemap" role="button" class="toggleButton satellite"><div class="basemapImage"><img alt="Satellite" src="./Request Submission_files/satellite.jpg"></div><div class="basemapTitle">Satellite</div></div>
+    </div>
+</div>
+							<button type="button" id="CancelCoords" class="btn btn-danger" data-bind="click: cancelMap">Cancel</button>
+							<button type="button" id="ConfirmCoords" class="btn btn-primary" data-bind="click: confirmCoords">Confirm</button>
+						</div>
+					</div>
+			  </div>
+			  <br>
+			  <div class="checkbox">
+				<label class="control-label">
+					<input type="checkbox" id="UseRequestorsAddress"><label for="UseRequestorsAddress" class="control-label"><strong>Use Requestor's Address</strong></label>
+				</label>
+			  </div>
+			  <br>
+			<div class="row">
+				<div class="col-md-2 form-group">
+					<label for="BuildingNumber" class="control-label">Bldg #</label>
+					<input type="text" id="BuildingNumber" placeholder="Building Number" class="form-control" data-bind="value: BuildingNumber">
+				</div>
+				<div class="col-md-10 form-group">
+					<!-- Street and Street2 are much like RequestorStreet and RequestorStreet2, however these REQUIRE a valid input -->
+					<label for="Street" class="control-label">Street name where request is desired</label>
+					<label for="_Street" style="display: none;" class="control-label">Hidden Combobox Label</label><select type="text" id="_Street" placeholder="Street" style="display: none;"></select><span class="custom-combobox ui-widget"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input title="" id="Street" placeholder="Street" class="custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left ui-autocomplete-input form-control" autocomplete="off" data-original-title="" data-bind="value: Street, valueUpdate:&#39;afterkeydown&#39;"><a tabindex="-1" title="" data-original-title="Show All Items" class="custom-combobox-toggle ui-corner-right StreetDown"></a></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="CommentFromCustomers" class="control-label">Please describe the problem as clearly as possible</label>
+				<textarea id="CommentFromCustomers" rows="4" class="form-control" data-bind="value: CommentFromCustomers"></textarea>
+			</div>
+			<br>
+			<center>
+			<!-- UploaderDiv is REQUIRED to surround the file uploader in order for the site to function properly. It does not make any physical marks on the site however. If file uploading
+			is not supported, DO NOT REMOVE this div or its contents. Instead, place: 'style="display: none;"' after 'id="UploaderDiv"' and the image uploader will disappear -->
+			<div id="UploaderDiv">
+				<label for="FileToUpload" class="control-label">
+					Select an image to upload:</label>
+				<br>
+				<span class="btn btn-default btn-file">
+				Browse<input type="file" name="FileToUpload[]" id="FileToUpload">
+				</span>
+			<div id="fileName">
+			</div>
+			<div id="fileSize">
+			</div>
+			<div id="fileType">
+			</div>
+			<div id="progressNumber">
+			</div>
+			<br>
+			<progress id="prog" value="0" max="100.0" style="display: none;"></progress>
+			<br><br>
+			</div>
+				<!-- If a Captcha is used, Captcha_Div is REQUIRED to surround it in order for the site to function properly. A simple Captcha is included. IF THE CAPTCHA IS CHANGED: LucityCitizenRequest.js MUST
+				BE EDITED IN ORDER FOR THE SITE TO WORK PROPERLY. Line 4 of LucityCitizenRequest.js must be modified as specific to the Captcha that is chosen -->
+				<div id="Captcha_Div"> 
+					<label for="CaptchaInput" class="control-label">Enter this Code:  </label>
+					<div id="Captcha">F1g1U</div>
+					<input type="text" name="CaptchaInput" id="CaptchaInput" size="15" autocorrect="off" autocapitalize="off">
+				</div>
+		  <br>
+		  <!-- The submit button. The inner text of the button can be changed in between the ">" and "<" -->
+		  <button type="button" id="submit" class="btn btn-default" data-bind="click: submit" data-loading-text="Submitting...">Submit</button>
+		  <br><br>
+		  </center>
+		  <!-- By default, Lucity uses Bootstrap alert to act as the footer for the site. Feel free to modify this as wanted. 'separator' is by Lucity, it enlarges and centers the text -->
+		  <div class="alert">
+			<h3><a target="_blank" href="https://www.lucity.com/">© www.lucity.com</a></h3>
+		  </div>
+		  </div>
+		</fieldset>
+		</form>
+<!-- The loadingmask div is important for users attempting to use the site with a slow connection so they know the site is still responding. The noscript makes it so the page will not load at all for users who 
+do not have JavaScript enabled on their browser. The site WILL NOT work without JavaScript-->
+
+</div>
+
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="display: none;"></ul><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-2" tabindex="0" style="display: none;"></ul><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-3" tabindex="0" style="display: none;"></ul><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-4" tabindex="0" style="display: none;"></ul><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-5" tabindex="0" style="display: none;"></ul></body></html>

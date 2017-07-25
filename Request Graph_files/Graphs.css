@@ -1,0 +1,187 @@
+/* Written & Commented by Sean Stout for Lucity, Inc. (c) 2014. Some css provided by 3rd party authors & are copyright to their respective owners */
+@font-face {
+    font-family: GeosansLight;
+    src: url(fonts/geosanslight.ttf);
+}
+
+#loadingmask { /* Used for the loading mask image. Change the background as seen fit. width should match body width so that it appears truly centered */
+    width:85%;
+    height:100%;
+    position:fixed;
+    top:0;
+    background:#FFF url(../images/loading.gif) center no-repeat;
+	margin: auto;
+}
+
+#loadingmask2 { /* Used for the loading mask image when loading graph that is not yet loaded. Change the background as seen fit. */
+    width:100%;
+    height:60%;
+    position:relative;
+    top:0;
+    background:#FFF url(../images/loading.gif) center no-repeat;
+	margin: auto;
+	overflow-y: hidden;
+}
+
+#JSWarn { /* The warning that the user does not have JavaScript enabled. top and transform percentages must have the same absolute value to work as intended */
+	position: relative;
+	top: 60%;
+	transform: translateY(-60%);
+}
+
+#RESTAPI {
+	display: none;
+}
+
+html {
+	height: 100%;
+}
+
+body { /* Scales the entire site */
+	width: 85%;
+	margin: auto;
+	height: 100%;
+}
+
+h1 {
+	font-family: GeosansLight, sans-serif;
+	text-align: center;
+	color: #99CC33;
+   -webkit-text-fill-color: #99CC33; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: #99CC33;
+   padding-bottom: 0;
+   margin-bottom: 0;
+}
+
+h4 { /* Centers h4's */
+	text-align: center;
+}
+
+.transparent{
+	fill-opacity: .6;
+}
+
+.one {
+    border: 1px solid black;
+	height: 25em;
+	width: 25em;
+	max-width: 100%;
+	margin: 2%;
+	display: inline-block;
+}
+
+.two {
+    border: 1px solid black;
+	height: 25em;
+	width: 25em;
+	max-width: 100%;
+	margin: 2%;
+	display: inline-block;
+}
+
+.three {
+	height: 25em;
+	width: 65em;
+	margin: auto;
+}
+
+#piechart {
+	height: 25em;
+	width: 75em;
+	margin: auto;
+}
+
+#chart {
+	height: 25em;
+	width: 25em;
+	margin: auto;
+}
+
+.legend rect {
+	fill:white;
+	stroke:black; 
+}
+
+#dial-0 .needle path {
+    fill: #b21f24;
+}
+
+circle.label {
+    fill: white;
+}       
+
+line.label {
+	stroke: white; 
+	stroke-width: 1px;
+}
+
+#dial-0 text.label {
+	font-size: 16px;   
+	font-family: Arial;
+      font-size: 12px;
+      fill: white; 	
+} 
+
+.x.axis path,
+.x.axis line {
+  display: none;
+}
+
+.y.axis path,
+.y.axis line  {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+/* Styles the buttons */
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger {
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
+}
+.btn-default:active,
+.btn-primary:active,
+.btn-success:active,
+.btn-info:active,
+.btn-warning:active,
+.btn-danger:active,
+.btn-default.active,
+.btn-primary.active,
+.btn-success.active,
+.btn-info.active,
+.btn-warning.active,
+.btn-danger.active {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.btn:active,
+.btn.active {
+  background-image: none;
+}
+.btn-default {
+  text-shadow: 0 1px 0 #fff;
+  background-image: -webkit-linear-gradient(top, #fff 0%, #e0e0e0 100%);
+  background-image:         linear-gradient(to bottom, #fff 0%, #e0e0e0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-color: #dbdbdb;
+  border-color: #ccc;
+}
+.btn-default:hover,
+.btn-default:focus {
+  background-color: #e0e0e0;
+  background-position: 0 -15px;
+}
+.btn-default:active,
+.btn-default.active {
+  background-color: #e0e0e0;
+  border-color: #dbdbdb;
+}

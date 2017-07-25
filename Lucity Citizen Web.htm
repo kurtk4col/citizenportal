@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://demo.lucity.net/LucityCustomCitizen/ -->
+<html lang="en"><!-- Written & Commented by Sean Stout for Lucity, Inc. (c) 2014. Some scripts provided by 3rd party authors & are copyright to their respective owners --><!-- Welcome to the MainPage html file! The comments throughout should help you learn how to use and modify this file to fit your desire. --><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<!-- title can be changed as seen fit -->
+		<title>Lucity Citizen Web</title>
+		<!-- meta names used for iPhone and Android standalone app stylings. Leave these alone -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="mobile-web-app-capable" content="yes">
+		<!-- All scripts are necessary for the functioning of the app. Leave scripts in the order they are put in -->
+		<script type="text/javascript" src="./Lucity Citizen Web_files/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="./Lucity Citizen Web_files/bootstrap.min.js"></script>
+		<script src="./Lucity Citizen Web_files/d3.v3.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="./Lucity Citizen Web_files/MainPage.js"></script>
+		<!-- All links are necessary for the looks of the app. Leave css in the order they are put in. If modifications are to be made with a separate css file, add it to the bottom -->
+        <link rel="stylesheet" href="./Lucity Citizen Web_files/bootstrap.min.css">
+		<link rel="stylesheet" href="./Lucity Citizen Web_files/MainPage.css">
+		<!-- Links following this point are for iPhone and Android standalone app stylings. Additionally, 'icon' is the icon for the page in an ordinary browser. The 'href' can be changed to point to custom startup images.
+		The resolutions for the 'rel="apple-touch-startup-image"' MUST be the EXACT same or they will not work. These are the startup images when using the site as a standalone app on different apple devices. At this time
+		there is no way to have a startup image for android -->
+		<link rel="icon" sizes="196x196" href="https://demo.lucity.net/LucityCustomCitizen/images/touch-icon.png">
+		<link rel="shortcut icon" href="https://demo.lucity.net/LucityCustomCitizen/images/favicon.ico?v=2">
+		<link rel="apple-touch-icon" href="https://demo.lucity.net/LucityCustomCitizen/images/apple-touch-icon.png">
+		<link href="https://demo.lucity.net/LucityCustomCitizen/images/apple-startup-image-retina.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+		<link href="https://demo.lucity.net/LucityCustomCitizen/images/apple-startup-image-iphone-5.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+		<link href="https://demo.lucity.net/LucityCustomCitizen/images/apple-startup-image-ipad-portrait.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+		<link href="https://demo.lucity.net/LucityCustomCitizen/images/apple-startup-image-ipad-landscape.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+		<link href="https://demo.lucity.net/LucityCustomCitizen/images/apple-startup-image-ipad-portrait-retina.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+		<link href="https://demo.lucity.net/LucityCustomCitizen/images/apple-startup-image-ipad-landscape-retina.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+		<link href="https://demo.lucity.net/LucityCustomCitizen/images/apple-startup-image.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+	</head>
+	<body>  
+		<!-- You must change the following to your own URL for the Lucity Citizen Portal installation -->
+		<div id="RESTAPI">https://demo.lucity.net/LucityCitizenPortalRESTAPI/Work</div>
+		<!-- By default, Lucity uses Bootstrap alert to act as the header for the site. Feel free to modify this as wanted. -->
+		<div class="alert">
+			<h1><span>Lucity Citizen Web</span></h1>
+		</div>
+		<center>
+			<!-- To add a button, simply put in a link as seen below and enter the text you wish the button to display -->
+			<a href="https://demo.lucity.net/LucityCustomCitizen/LucityCitizenRequest.html" class="btn btn-primary" style="width: 324px;">Submit Request</a><br><br>
+			<a href="https://demo.lucity.net/LucityCustomCitizen/RequestLookup.html" class="btn btn-primary" style="width: 324px;">Track Request</a><br><br>
+			<a href="https://demo.lucity.net/LucityCustomCitizen/Map.html" class="btn btn-primary" style="width: 324px;">View Request Map</a><br><br>
+			<a href="https://demo.lucity.net/LucityCustomCitizen/Graphs.html" class="btn btn-primary" style="width: 324px;">View Request Data</a><br><br>
+			<div id="GraphBody1" class="one"><svg width="348" height="348"><g class="axis" transform="translate(40,20)"><rect x="0" y="59.599999999999994" width="138" height="238.4" fill="#EC9B28"></rect><rect x="139" y="59.599999999999994" width="138" height="238.4" fill="#9ACD32"></rect><text text-anchor="middle" x="69" y="73.6" font-family="sans-serif" font-size="11px" fill="white">4</text><text text-anchor="middle" x="208" y="73.6" font-family="sans-serif" font-size="11px" fill="white">4</text><g class="x axis" transform="translate(0,298)"><g class="tick" transform="translate(69,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">Open</text></g><g class="tick" transform="translate(208,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">Closed</text></g><path class="domain" d="M69,6V0H208V6"></path></g><text text-anchor="middle" x="138" y="1em" font-family="sans-serif" font-size="1.5em">30 Days</text><g class="y axis" transform="translate(0,59.6)"><g class="tick" transform="translate(0,238.4)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">0</text></g><g class="tick" transform="translate(0,178.8)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">1</text></g><g class="tick" transform="translate(0,119.2)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">2</text></g><g class="tick" transform="translate(0,59.6)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">3</text></g><g class="tick" transform="translate(0,0)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">4</text></g><path class="domain" d="M-6,0H0V238.4H-6"></path><text transform="rotate(-90)" y="292" x="-59.6" style="text-anchor: end;">Requests</text></g></g></svg></div><div id="GraphBody2" class="two"><svg width="348" height="348"><g class="axis" transform="translate(40,20)"><rect x="0" y="59.599999999999994" width="138" height="238.4" fill="#EC9B28"></rect><rect x="139" y="231.77777777777777" width="138" height="66.22222222222223" fill="#9ACD32"></rect><text text-anchor="middle" x="69" y="73.6" font-family="sans-serif" font-size="11px" fill="white">18</text><text text-anchor="middle" x="208" y="245.77777777777777" font-family="sans-serif" font-size="11px" fill="white">5</text><g class="x axis" transform="translate(0,298)"><g class="tick" transform="translate(69,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">Open</text></g><g class="tick" transform="translate(208,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">Closed</text></g><path class="domain" d="M69,6V0H208V6"></path></g><text text-anchor="middle" x="138" y="1em" font-family="sans-serif" font-size="1.5em">365 Days</text><g class="y axis" transform="translate(0,59.6)"><g class="tick" transform="translate(0,238.4)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">0</text></g><g class="tick" transform="translate(0,172.17777777777778)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">5</text></g><g class="tick" transform="translate(0,105.95555555555555)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">10</text></g><g class="tick" transform="translate(0,39.733333333333334)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">15</text></g><path class="domain" d="M-6,0H0V238.4H-6"></path><text transform="rotate(-90)" y="292" x="-59.6" style="text-anchor: end;">Requests</text></g></g></svg></div>
+		</center>
+	<div class="alert">
+		<h3><a id="footer" target="_blank" href="https://www.lucity.com/">© www.lucity.com</a></h3>
+	</div>
+	<!-- The loadingmask div is important for users attempting to use the site with a slow connection so they know the site is still responding. The noscript makes it so the page will not load at all 
+	for users who do not have JavaScript enabled on their browser. The site WILL NOT work without JavaScript-->
+	
+	
+</body></html>
