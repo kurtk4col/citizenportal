@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <html lang="en">
+    <!-- Written & Commented by Perry Gowdy for Lucity, Inc. (c) 2017. Some scripts provided by 3rd party authors & are copyright to their respective owners -->
+    <!-- Welcome to the Work Order Lookup html file! The comments throughout should help you learn how to use and modify this file to fit your desire. As a top level note, it must be said that all ids are VERY SPECIFIC
+    and they are ALL CASE SENSITIVE. DO NOT MODIFY the ids of anything that does not need to be changed. The casing of each id is not consistent throughout the document, THIS IS BY DESIGN. Additionally, all classes are
+    case specific, classes must be cased as provided or they WILL NOT WORK. -->
+        <head>
+    		<!-- title can be changed as seen fit -->
+    		<title>Work Order Lookup</title>
+    		<!-- meta names used for iPhone and Android standalone app stylings. Leave these alone -->
+    		<meta name="viewport" content="width=device-width, initial-scale=1">
+    		<meta name="apple-mobile-web-app-capable" content="yes">
+    		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    		<meta name="mobile-web-app-capable" content="yes">
+    		<!-- All scripts are necessary for the functioning of the app. Leave scripts in the order they are put in -->
+    		<script type='text/javascript' src='https://code.jquery.com/jquery-1.11.1.min.js'></script>
+    		<script type='text/javascript' src='https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js'></script>
+            <script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+    		<script type='text/javascript' src='3rdParty/knockout.validation.min.js'></script>
+    		<script type='text/javascript' src='scripts/WorkOrderLookup.js'></script>
+    		<!-- All links are necessary for the looks of the app. Leave css in the order they are put in. If modifications are to be made with a separate css file, add it to the bottom -->
+            <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'/>
+    		<link rel='stylesheet' href='styles/RequestLookup.css'/>
+    		<!-- Links following this point are for iPhone and Android standalone app stylings. Additionally, 'icon' is the icon for the page in an ordinary browser. The 'href' can be changed to point to custom startup images.
+    		The resolutions for the 'rel="apple-touch-startup-image"' MUST be the EXACT same or they will not work. These are the startup images when using the site as a standalone app on different apple devices. At this time
+    		there is no way to have a startup image for android -->
+    		<link rel="icon" sizes="196x196" href="images/touch-icon.png" />
+    		<link rel="shortcut icon" href="images/favicon.ico?v=2">
+    		<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    		<link href="images/apple-startup-image-retina.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+    		<link href="images/apple-startup-image-iphone-5.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+    		<link href="images/apple-startup-image-ipad-portrait.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+    		<link href="images/apple-startup-image-ipad-landscape.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+    		<link href="images/apple-startup-image-ipad-portrait-retina.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+    		<link href="images/apple-startup-image-ipad-landscape-retina.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+    		<link href="images/apple-startup-image.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+    	</head>
+    	<body>
+    		<!-- You must change the following to your own URL for the Lucity Citizen Portal installation -->
+    		<!-- <div id="RESTAPI">http://restapi.lucity.net/LucityRESTAPI</div> -->
+            <div id="RESTAPI">https://demo.lucity.net/LucityCitizenPortalRESTAPI/Work</div>
+    		<!-- By default, Lucity uses a Bootstrap alert to act as the header for the site. Feel free to modify this as wanted. -->
+    		<div class="alert">
+    			<h1>Lookup A Work Order</h1>
+    		</div>
+    		<!-- Holds the form -->
+    		<form>
+    			<!-- all divs are necessary for formatting -->
+    			<div>
+    				<label for="WorkOrderNumberInput">Work Order Number</label>
+    				<div>
+    					<input type="text" id="WorkOrderNumberInput" placeholder="Work Order Number">
+    				</div>
+    			</div>
+    			<!-- <div>
+    				<label for="RequestorEmailInput">Requestor Email</label>
+    					<div>
+    						<input type="email" id="RequestorEmailInput" placeholder="Email">
+    					</div>
+    			</div> -->
+    		</form>
+    		<!-- <h4>*Both fields are required to lookup a Work Order*</h4> -->
+    		<br>
+    		<center>
+    			<button id="GetWorkOrder">Get Work Order</button>
+    			<br><br>
+    			<!-- These will appear upon request with the desired info -->
+    			<div id='WorkOrderNumber'></div>
+    			<div id='StatusType'></div>
+    			<div id='StatusDate'></div>
+    			<div id='ProblemType'></div>
+    			<div id='Notes'></div>
+    			<div id='CreationDateTime'></div>
+    		</center>
+    		<!-- The loadingmask div is important for users attempting to use the site with a slow connection so they know the site is still responding. The noscript makes it so the page will not load at all
+    		for users who do not have JavaScript enabled on their browser. The site WILL NOT work without JavaScript-->
+    	<div id="loadingmask"><noscript><center id="JSWarn">Enable JavaScript to see this page</center></noscript></div>
+    	</body>
+    </html>

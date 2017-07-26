@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Written & Commented by Sean Stout for Lucity, Inc. (c) 2014. Some scripts provided by 3rd party authors & are copyright to their respective owners -->
-<!-- Welcome to the RequestLookup html file! The comments throughout should help you learn how to use and modify this file to fit your desire. As a top level note, it must be said that all ids are VERY SPECIFIC
-and they are ALL CASE SENSITIVE. DO NOT MODIFY the ids of anything that does not need to be changed. The casing of each id is not consistent throughout the document, THIS IS BY DESIGN. Additionally, all classes are
-case specific, classes must be cased as provided or they WILL NOT WORK. -->
+<!-- Welcome to the MainPage html file! The comments throughout should help you learn how to use and modify this file to fit your desire. -->
     <head>
 		<!-- title can be changed as seen fit -->
-		<title>Request Graph</title>
+		<title>Lucity Citizen Web</title>
 		<!-- meta names used for iPhone and Android standalone app stylings. Leave these alone -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,11 +14,10 @@ case specific, classes must be cased as provided or they WILL NOT WORK. -->
 		<script type='text/javascript' src='https://code.jquery.com/jquery-1.11.1.min.js'></script>
         <script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
 		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-		<script type='text/javascript' src='3rdParty/dial.chart.js'></script>
-		<script type='text/javascript' src='scripts/Graphs.js'></script>
+		<script type='text/javascript' src='scripts/MainPage.js'></script>
 		<!-- All links are necessary for the looks of the app. Leave css in the order they are put in. If modifications are to be made with a separate css file, add it to the bottom -->
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'/>
-		<link rel='stylesheet' href='styles/Graphs.css'/>
+		<link rel='stylesheet' href='styles/MainPage.css'/>
 		<!-- Links following this point are for iPhone and Android standalone app stylings. Additionally, 'icon' is the icon for the page in an ordinary browser. The 'href' can be changed to point to custom startup images.
 		The resolutions for the 'rel="apple-touch-startup-image"' MUST be the EXACT same or they will not work. These are the startup images when using the site as a standalone app on different apple devices. At this time
 		there is no way to have a startup image for android -->
@@ -40,19 +37,22 @@ case specific, classes must be cased as provided or they WILL NOT WORK. -->
 		<div id="RESTAPI">https://demo.lucity.net/LucityCitizenPortalRESTAPI/Work</div>
 		<!-- By default, Lucity uses Bootstrap alert to act as the header for the site. Feel free to modify this as wanted. -->
 		<div class="alert">
-			<h1>Graphs</h1>
+			<h1><span>Lucity Citizen Web</span></h1>
 		</div>
-		<ul class="nav nav-tabs" role="tablist">
-		  <li id="OpenClosed" class="active"><a href="#">Open/Closed</a></li>
-		  <li id="RequestBar"><a href="#">Request Bar</a></li>
-		  <li id="RequestPie"><a href="#">Request Pie</a></li>
-		  <li id="AverageTime"><a href="#">Average Time</a></li>
-		</ul>
-		<br>
-		<div id="BodyContainer">
-		</div>
-		<!-- The loadingmask div is important for users attempting to use the site with a slow connection so they know the site is still responding. The noscript makes it so the page will not load at all
-		for users who do not have JavaScript enabled on their browser. The site WILL NOT work without JavaScript-->
+		<center>
+			<!-- To add a button, simply put in a link as seen below and enter the text you wish the button to display -->
+			<a href="LucityCitizenRequest.html">Submit Request</a>
+			<a href="RequestLookup.html">Track Request</a>
+            <a href="WorkOrderLookup.html">Track Work Order</a>
+			<a href="Map.html">View Request Map</a>
+			<a href="Graphs.html">View Request Data</a>
+			<div id='GraphBody1' class='one'></div><div id='GraphBody2' class='two'></div>
+		</center>
+	<div class="alert">
+		<h3><a id="footer" target="_blank" href="https://www.lucity.com/">&#169; www.lucity.com</a></h3>
+	</div>
+	<!-- The loadingmask div is important for users attempting to use the site with a slow connection so they know the site is still responding. The noscript makes it so the page will not load at all
+	for users who do not have JavaScript enabled on their browser. The site WILL NOT work without JavaScript-->
 	<div id="loadingmask"><noscript><center id="JSWarn">Enable JavaScript to see this page</center></noscript></div>
 	</body>
 </html>
